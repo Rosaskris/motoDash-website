@@ -1,0 +1,218 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Capturas de la app: carbón, ámbar y violeta; fondos nunca crema. */
+  --base: oklch(0.22 0.005 80);
+  --base-2: oklch(0.29 0.008 80);
+  --scarlet: #e23744;
+  --orange: oklch(0.79 0.16 78);
+  --violet: oklch(0.64 0.20 286);
+  /* Colores de marca de plataformas externas: se usan tal cual, sin tematizar. */
+  --whatsapp: #25d366;
+  --whatsapp-strong: #128c7e;
+  --whatsapp-foreground: #ffffff;
+  --instagram: #833ab4;
+  --instagram-2: #d6249f;
+  --instagram-3: #fd5949;
+  --instagram-4: #fcb045;
+  --instagram-foreground: #ffffff;
+  --tiktok: #010101;
+  --tiktok-strong: #1c1c1c;
+  --tiktok-cyan: #25f0ee;
+  --tiktok-pink: #fe2c55;
+  --tiktok-foreground: #ffffff;
+  --background: var(--base);
+  --foreground: oklch(0.95 0.014 95);
+  --card: var(--base-2);
+  --card-foreground: var(--foreground);
+  --popover: var(--base-2);
+  --popover-foreground: var(--foreground);
+  --primary: var(--orange);
+  --primary-foreground: var(--base);
+  --secondary: var(--violet);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.30 0.008 80);
+  --muted-foreground: oklch(0.76 0.01 80);
+  --surface: oklch(0.31 0.008 80);
+  --surface-strong: oklch(0.26 0.023 286);
+  --accent: var(--violet);
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: oklch(0.62 0.012 80 / 45%);
+  --input: var(--border);
+  --ring: var(--violet);
+  --chart-1: var(--scarlet);
+  --chart-2: var(--orange);
+  --chart-3: var(--violet);
+  --chart-4: #f5f5f7;
+  --chart-5: var(--base-2);
+  --sidebar: var(--base-2);
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: var(--scarlet);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--base-2);
+  --sidebar-accent-foreground: #f5f5f7;
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--violet);
+  --gradient-hero: linear-gradient(var(--background), var(--background));
+  --gradient-cta: linear-gradient(var(--surface-strong), var(--surface-strong));
+  --section-divider: oklch(0.64 0.013 80 / 65%);
+  --shadow-capture: 0 18px 40px oklch(0 0 0 / 24%);
+  --gradient-instagram: linear-gradient(
+    135deg,
+    var(--instagram-4) 0%,
+    var(--instagram-3) 35%,
+    var(--instagram-2) 65%,
+    var(--instagram) 100%
+  );
+}
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-scarlet: var(--scarlet);
+  --color-orange: var(--orange);
+  --color-violet: var(--violet);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-strong: var(--whatsapp-strong);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-instagram: var(--instagram);
+  --color-instagram-2: var(--instagram-2);
+  --color-instagram-3: var(--instagram-3);
+  --color-instagram-4: var(--instagram-4);
+  --color-instagram-foreground: var(--instagram-foreground);
+  --color-tiktok: var(--tiktok);
+  --color-tiktok-strong: var(--tiktok-strong);
+  --color-tiktok-cyan: var(--tiktok-cyan);
+  --color-tiktok-pink: var(--tiktok-pink);
+  --color-tiktok-foreground: var(--tiktok-foreground);
+}
+
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+@utility bg-cta {
+  background-image: var(--gradient-cta);
+}
+@utility bg-instagram-brand {
+  background-image: var(--gradient-instagram);
+}
+
+/* The site already uses its app-inspired dark palette in both theme modes. */
+main > section {
+  position: relative;
+  border-top: 2px solid var(--section-divider);
+  border-bottom: 0;
+  background: var(--background);
+}
+main > section:nth-child(even) {
+  background: var(--surface);
+}
+main > section::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--primary);
+}
+main > section:nth-child(even)::before {
+  background: var(--accent);
+}
+main > section#cta {
+  background: var(--surface-strong);
+}
+.app-capture {
+  box-shadow: var(--shadow-capture);
+}
+
+@keyframes capture-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.capture-swap {
+  animation: capture-in 0.35s ease both;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
