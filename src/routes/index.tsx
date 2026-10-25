@@ -18,11 +18,11 @@ import {
   MessageCircle,
   Instagram,
 } from "lucide-react";
-import logoMark from "@/assets/moto-dash-logo.png.asset.json";
-import appHome from "@/assets/moto-dash-inicio.jpg.asset.json";
-import appDrive from "@/assets/moto-dash-conducir.jpg.asset.json";
-import appSettings from "@/assets/moto-dash-ajustes.jpg.asset.json";
-import heroShot from "@/assets/moto-dash-tablero-noche-v2.jpg.asset.json";
+import logoMark from "@/assets/moto-dash-logo.png";
+import appHome from "@/assets/moto-dash-inicio.jpg";
+import appDrive from "@/assets/moto-dash-conducir.jpg";
+import appSettings from "@/assets/moto-dash-ajustes.jpg";
+import heroShot from "@/assets/moto-dash-tablero-noche-v2.jpg";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
@@ -59,7 +59,7 @@ const links = [
 function Logo() {
   return (
     <a href="#inicio" aria-label="Moto Dash, inicio" className="flex items-center gap-2 text-xl font-extrabold">
-      <img src={logoMark.url} alt="" width={40} height={40} className="h-10 w-10 object-contain" />
+      <img src={logoMark} alt="" width={40} height={40} className="h-10 w-10 object-contain" />
       <span>
         Moto <span className="text-primary">Dash</span>
       </span>
@@ -134,7 +134,7 @@ function Hero() {
             }}
           >
             <img
-              src={heroShot.url}
+              src={heroShot}
               alt=""
               width={1917}
               height={1832}
@@ -164,7 +164,7 @@ function Hero() {
             }}
           >
             <img
-              src={heroShot.url}
+              src={heroShot}
               alt=""
               width={1917}
               height={1832}
@@ -268,7 +268,7 @@ function AppPreview() {
               {captures.map((item, i) => (
                 <img
                   key={item.title}
-                  src={item.src.url}
+                  src={item.src}
                   alt={i === index ? item.alt : ""}
                   aria-hidden={i !== index}
                   width={item.w}
