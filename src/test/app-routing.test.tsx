@@ -14,4 +14,11 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  // Google Play Console enlaza estas dos URLs: la política de privacidad y la de eliminación de datos.
+  it.each(["/privacidad", "/eliminar-datos"])("matches the legal page %s", (path) => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes(path).at(-1)?.routeId).toBe(path);
+  });
 });

@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EliminarDatosRouteImport } from './routes/eliminar-datos'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EliminarDatosRoute = EliminarDatosRouteImport.update({
+  id: '/eliminar-datos',
+  path: '/eliminar-datos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/eliminar-datos': typeof EliminarDatosRoute
+  '/privacidad': typeof PrivacidadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/eliminar-datos': typeof EliminarDatosRoute
+  '/privacidad': typeof PrivacidadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/eliminar-datos': typeof EliminarDatosRoute
+  '/privacidad': typeof PrivacidadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/eliminar-datos' | '/privacidad'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/eliminar-datos' | '/privacidad'
+  id: '__root__' | '/' | '/eliminar-datos' | '/privacidad'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EliminarDatosRoute: typeof EliminarDatosRoute
+  PrivacidadRoute: typeof PrivacidadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/eliminar-datos': {
+      id: '/eliminar-datos'
+      path: '/eliminar-datos'
+      fullPath: '/eliminar-datos'
+      preLoaderRoute: typeof EliminarDatosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EliminarDatosRoute: EliminarDatosRoute,
+  PrivacidadRoute: PrivacidadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

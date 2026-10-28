@@ -6,7 +6,7 @@ export const product = {
   license: { devices: 3, sameMotorcycleOnly: true, oneTimePayment: true, paidUpdates: false },
   capabilities: { callsOnDashboard: true, whatsappMessageAlertsOnDashboard: false, replyFromDashboard: false, otherDashboardMaps: false, modifiesMotorcycle: false, lockedPhone: true },
   dashboardInfo: ['Odómetro', 'Voltaje de batería', 'Trip A', 'TCS', 'RPM', 'Gato lateral'],
-  // Contacto único: por este número se entrega el código (token) que activa la app.
+  // Soporte: la app y la licencia se obtienen en Google Play, no por este chat.
   whatsapp: { display: '+57 313 7044065', number: '573137044065' },
   // Redes oficiales: mismo usuario en las dos plataformas.
   social: {
@@ -14,15 +14,24 @@ export const product = {
     instagram: 'https://www.instagram.com/moto.dash.oficial?utm_source=qr&psln=MW5qbG4xYWFrZTU0bw==',
     tiktok: 'https://www.tiktok.com/@moto.dash.oficial',
   },
-  // Enlace del archivo publicado en la página. Vacío mientras no esté publicado.
-  apkUrl: '',
+  // Ficha de Google Play. Vacía mientras la app no esté publicada; al publicarla será
+  // https://play.google.com/store/apps/details?id=com.krosas.symdash.aa
+  playStoreUrl: '',
+  // Responsable del tratamiento de datos (Ley 1581 de 2012), para /privacidad y /eliminar-datos.
+  legal: {
+    responsible: 'Krisbel Rosas',
+    idNumber: '1127918438',
+    city: 'Medellín',
+    email: 'motodashoficial@gmail.com',
+    policyDate: '27 de octubre de 2026',
+  },
 };
 
 export function whatsappLink(message: string): string {
   return `https://wa.me/${product.whatsapp.number}?text=${encodeURIComponent(message)}`;
 }
 
-// Descarga directa desde la página: solo existe cuando ya hay archivo publicado.
-export function apkDownloadUrl(): string | null {
-  return product.apkUrl || null;
+// Enlace a Google Play: solo existe cuando la app ya está publicada.
+export function playStoreLink(): string | null {
+  return product.playStoreUrl || null;
 }

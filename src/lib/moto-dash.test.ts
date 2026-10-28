@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { apkDownloadUrl, product, whatsappLink } from './moto-dash';
+import { playStoreLink, product, whatsappLink } from './moto-dash';
 describe('Condiciones de Moto Dash', () => {
+  it('identifica al responsable del tratamiento de datos', () => {
+    expect(product.legal).toMatchObject({
+      responsible: 'Krisbel Rosas',
+      idNumber: '1127918438',
+      city: 'Medellín',
+      email: 'motodashoficial@gmail.com',
+    });
+  });
   it('permite tres dispositivos distintos en la misma moto', () => {
     expect(product.license.devices).toBe(3);
     expect(product.license.sameMotorcycleOnly).toBe(true);
@@ -21,16 +29,16 @@ describe('Condiciones de Moto Dash', () => {
   it('muestra solo los datos confirmados de la moto', () => {
     expect(product.dashboardInfo).toEqual(['Odómetro', 'Voltaje de batería', 'Trip A', 'TCS', 'RPM', 'Gato lateral']);
   });
-  it('usa el número de WhatsApp que entrega el código de licencia', () => {
+  it('usa el número de WhatsApp de soporte', () => {
     expect(product.whatsapp.number).toBe('573137044065');
     expect(product.whatsapp.display).toBe('+57 313 7044065');
   });
   it('abre el chat de WhatsApp con el mensaje escrito', () => {
     expect(whatsappLink('Hola Moto Dash')).toBe('https://wa.me/573137044065?text=Hola%20Moto%20Dash');
   });
-  it('mientras no haya archivo publicado, la descarga directa no está disponible', () => {
-    expect(product.apkUrl).toBe('');
-    expect(apkDownloadUrl()).toBeNull();
+  it('mientras la app no esté publicada en Google Play, no hay enlace a la tienda', () => {
+    expect(product.playStoreUrl).toBe('');
+    expect(playStoreLink()).toBeNull();
   });
   it('usa el mismo usuario en Instagram y TikTok', () => {
     expect(product.social.handle).toBe('moto.dash.oficial');

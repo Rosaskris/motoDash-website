@@ -15,7 +15,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  MessageCircle,
   Instagram,
 } from "lucide-react";
 import logoMark from "@/assets/moto-dash-logo.png";
@@ -26,7 +25,7 @@ import heroShot from "@/assets/moto-dash-tablero-noche-v2.jpg";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { apkDownloadUrl, product, whatsappLink } from "@/lib/moto-dash";
+import { playStoreLink, product } from "@/lib/moto-dash";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,7 +40,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Google Maps en tu SYM ADXTG 175. Solo Android, instalación por APK y un solo pago para tres dispositivos en la misma moto.",
+          "Google Maps en tu SYM ADXTG 175. Solo Android, en Google Play y un solo pago para tres dispositivos en la misma moto.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -81,7 +80,7 @@ function Header() {
         </nav>
         <Button asChild className="hidden md:inline-flex">
           <a href="#cta">
-            <Download /> Obtener APK
+            <Download /> Obtener App
           </a>
         </Button>
         <Sheet open={open} onOpenChange={setOpen}>
@@ -214,7 +213,7 @@ function Hero() {
             </a>
           </Button>
         </div>
-        <p className="mt-6 text-sm text-muted-foreground">Solo Android · Instalación por APK · Sin suscripción</p>
+        <p className="mt-6 text-sm text-muted-foreground">Solo Android · En Google Play · Sin suscripción</p>
       </div>
     </section>
   );
@@ -322,12 +321,12 @@ function HowItWorks() {
     {
       icon: Download,
       title: "Descarga e instala la app",
-      text: "Te damos el archivo APK y las instrucciones para instalarlo en tu Android: lo descargas desde esta página o te lo enviamos por WhatsApp, sin pasar por ninguna tienda.",
+      text: "Descarga Moto Dash desde Google Play en tu Android, como cualquier otra app.",
     },
     {
       icon: QrCode,
       title: "Conecta tu moto",
-      text: "Escanea el QR del tablero con la cámara o desde una foto y activa tu código de licencia.",
+      text: "Escanea el QR del tablero con la cámara o desde una foto y compra la licencia dentro de la app, con Google Play.",
     },
     {
       icon: Navigation,
@@ -381,8 +380,8 @@ const does = [
   },
   {
     n: 5,
-    title: "Te avisa cuando hace falta actualizar",
-    text: "Recibes un aviso automático cuando hay una versión nueva y se instala dentro de la app, sin otro pago.",
+    title: "Actualizaciones automáticas",
+    text: "Las versiones nuevas llegan por Google Play, sin otro pago.",
   },
   {
     n: 6,
@@ -515,7 +514,7 @@ function Benefits() {
     {
       icon: RefreshCw,
       title: "Actualizaciones incluidas",
-      text: "Recibes un aviso automático cuando hay una versión nueva. La app comprueba el archivo antes de instalarlo, sin otro pago.",
+      text: "Las versiones nuevas llegan por Google Play, como en cualquier otra app, sin otro pago.",
     },
   ];
   return (
@@ -568,7 +567,7 @@ function Requirements() {
   );
 }
 function License() {
-  const apk = apkDownloadUrl();
+  const store = playStoreLink();
   return (
     <section id="cta" className="scroll-mt-20 bg-surface-strong">
       <div className="mx-auto max-w-7xl px-5 py-16">
@@ -588,44 +587,30 @@ function License() {
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 No se paga por cada persona ni cada mes: la licencia es una sola, sin suscripción y con las
-                actualizaciones incluidas. La activación se hace con un código de licencia.
+                actualizaciones incluidas. La licencia se compra dentro de la app, con Google Play.
               </p>
             </div>
           </div>
           <div className="border-l-2 border-primary pl-5">
-            <h3 className="font-bold">Instalación directa por APK</h3>
+            <h3 className="font-bold">Descárgala en Google Play</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              El APK es el archivo de la app. Lo abres en tu Android, sigues las instrucciones que lo acompañan y queda
-              instalado, sin pasar por ninguna tienda. Te lo damos de dos formas: lo descargas aquí o te lo enviamos por
-              WhatsApp.
+              Instala Moto Dash desde Google Play en tu Android. Al conectar tu moto, compras la licencia dentro de la
+              app con tu cuenta de Google, y las actualizaciones te llegan por la tienda.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {apk ? (
+              {store ? (
                 <Button asChild size="lg">
-                  <a href={apk} download>
-                    <Download /> Descargar la app
+                  <a href={store} target="_blank" rel="noopener noreferrer">
+                    <Download /> Descargar en Google Play
                   </a>
                 </Button>
-              ) : null}
-              <Button asChild size="lg" variant="whatsapp">
-                <a
-                  href={whatsappLink("Hola, quiero el archivo APK de Moto Dash y su código de licencia.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle /> Pedirla por WhatsApp
-                </a>
-              </Button>
+              ) : (
+                <Button size="lg" disabled>
+                  <Download /> Próximamente en Google Play
+                </Button>
+              )}
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              {apk
-                ? "El archivo es el mismo en los dos canales: bájalo aquí o te lo pasamos al chat."
-                : "El enlace de descarga directa se activa cuando el archivo esté publicado en la página. Mientras tanto, te lo enviamos por WhatsApp."}
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              El código de licencia se entrega por WhatsApp al{" "}
-              <span className="font-semibold text-foreground">{product.whatsapp.display}</span>
-              <br />
+            <p className="mt-5 text-sm text-muted-foreground">
               Precio: <span className="font-semibold text-foreground">por definir</span>
             </p>
           </div>
@@ -718,11 +703,11 @@ const faqs = [
   ],
   [
     "¿Cómo recibo la app y las actualizaciones?",
-    "La primera instalación se hace con un archivo APK enviado directamente y sus instrucciones. Después, Moto Dash te notifica las nuevas versiones dentro de la app; las actualizaciones no tienen un costo adicional.",
+    "Descargas Moto Dash desde Google Play y la licencia la compras dentro de la app. Las actualizaciones llegan por la tienda y no tienen un costo adicional.",
   ],
   [
     "¿Qué pasa si cambio de teléfono?",
-    `Contacta a soporte por WhatsApp al ${product.whatsapp.display} para revisar la activación de tu licencia.`,
+    `Instala Moto Dash desde Google Play con la misma cuenta de Google. Si la licencia no se activa, escríbenos a soporte por WhatsApp al ${product.whatsapp.display}.`,
   ],
   [
     "¿Se siguen viendo la velocidad y la gasolina?",
@@ -752,6 +737,10 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-10">
         <div className="flex flex-wrap items-center justify-between gap-5">
           <Logo />
+          <nav aria-label="Páginas legales" className="flex flex-wrap gap-5 text-sm">
+            <a href="/privacidad" className="hover:text-primary">Política de privacidad</a>
+            <a href="/eliminar-datos" className="hover:text-primary">Eliminar mis datos</a>
+          </nav>
         </div>
         <p className="mt-6 max-w-4xl text-xs leading-relaxed text-muted-foreground">
           Moto Dash es un proyecto independiente. No está afiliado, patrocinado ni aprobado por SYM, Sanyang Motor,

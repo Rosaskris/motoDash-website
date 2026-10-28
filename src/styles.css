@@ -216,3 +216,27 @@ main > section#cta {
     color: var(--color-foreground);
   }
 }
+
+/* Páginas legales (/privacidad, /eliminar-datos): texto corrido a una columna. */
+.legal > p,
+.legal > ul,
+.legal > ol {
+  margin-top: 0.75rem;
+  line-height: 1.7;
+}
+.legal > ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.legal > ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.legal li + li {
+  margin-top: 0.5rem;
+}
+.legal a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
