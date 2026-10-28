@@ -15,7 +15,7 @@ export const product = {
     tiktok: 'https://www.tiktok.com/@moto.dash.oficial',
   },
   // Ficha de Google Play. Vacía mientras la app no esté publicada; al publicarla será
-  // https://play.google.com/store/apps/details?id=com.krosas.symdash.aa
+  // https://play.google.com/store/apps/details?id=com.motodash.app
   playStoreUrl: '',
   // Responsable del tratamiento de datos (Ley 1581 de 2012), para /privacidad y /eliminar-datos.
   legal: {
