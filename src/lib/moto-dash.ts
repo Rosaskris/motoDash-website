@@ -2,11 +2,11 @@ export const product = {
   motorcycle: 'SYM ADXTG 175',
   minimumAndroid: 10,
   minimumAndroidAuto: '17.4',
-  // Un solo pago para la misma moto.
-  license: { sameMotorcycleOnly: true, oneTimePayment: true, paidUpdates: false },
+  // App de pago en Google Play: un solo pago, actualizaciones incluidas.
+  license: { oneTimePayment: true, paidUpdates: false },
   capabilities: { callsOnDashboard: true, whatsappMessageAlertsOnDashboard: false, replyFromDashboard: false, otherDashboardMaps: false, modifiesMotorcycle: false, lockedPhone: true },
   dashboardInfo: ['Odómetro', 'Voltaje de batería', 'Trip A', 'TCS', 'RPM', 'Gato lateral'],
-  // Soporte: la app y la licencia se obtienen en Google Play, no por este chat.
+  // Soporte: la app se compra en Google Play, no por este chat.
   whatsapp: { display: '+57 313 7044065', number: '573137044065' },
   // Redes oficiales: mismo usuario en las dos plataformas.
   social: {
@@ -23,7 +23,7 @@ export const product = {
     idNumber: '1127918438',
     city: 'Medellín',
     email: 'motodashoficial@gmail.com',
-    policyDate: '27 de octubre de 2026',
+    policyDate: '28 de octubre de 2026',
   },
 };
 

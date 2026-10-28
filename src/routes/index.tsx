@@ -34,13 +34,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Google Maps en el tablero de tu SYM ADXTG 175, sin modificar la moto. Conoce las funciones, requisitos y licencia de Moto Dash para Android.",
+          "Google Maps en el tablero de tu SYM ADXTG 175, sin modificar la moto. Conoce las funciones, requisitos y precio de Moto Dash para Android.",
       },
       { property: "og:title", content: "Moto Dash — Smart Moto Navigation" },
       {
         property: "og:description",
         content:
-          "Google Maps en tu SYM ADXTG 175. Solo Android, en Google Play y un solo pago para la misma moto.",
+          "Google Maps en tu SYM ADXTG 175. Solo Android, en Google Play y con un solo pago.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -193,7 +193,7 @@ function Hero() {
                 Un solo pago
               </span>
               <span className="whitespace-nowrap rounded-full border-2 border-primary bg-card px-4 py-2 text-sm font-extrabold text-primary sm:text-base">
-                La misma moto
+                Sin suscripción
               </span>
             </div>
           </div>
@@ -323,7 +323,7 @@ function HowItWorks() {
     {
       icon: QrCode,
       title: "Conecta tu moto",
-      text: "Escanea el QR del tablero con la cámara o desde una foto y compra la licencia dentro de la app, con Google Play.",
+      text: "Escanea el QR del tablero con la cámara o desde una foto para guardar su Wi-Fi.",
     },
     {
       icon: Navigation,
@@ -569,25 +569,25 @@ function License() {
     <section id="cta" className="scroll-mt-20 bg-surface-strong">
       <div className="mx-auto max-w-7xl px-5 py-16">
         <p className="text-xs font-semibold uppercase text-accent">Obtener App</p>
-        <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Un solo pago. La misma moto.</h2>
+        <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Un solo pago. Sin suscripción.</h2>
         <div className="mt-6 grid gap-8 md:grid-cols-2">
           <div>
             <div className="rounded-xl border-2 border-primary bg-card p-6">
               <p className="text-3xl font-extrabold leading-tight sm:text-4xl">
                 Un solo pago.
-                <span className="mt-1 block text-primary">La misma moto.</span>
+                <span className="mt-1 block text-primary">Sin suscripción.</span>
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                No se paga cada mes: la licencia es una sola, para tu {product.motorcycle}, sin suscripción y con las
-                actualizaciones incluidas. La licencia se compra dentro de la app, con Google Play.
+                Pagas Moto Dash una sola vez al descargarla en Google Play. No se paga cada mes y las actualizaciones
+                están incluidas.
               </p>
             </div>
           </div>
           <div className="border-l-2 border-primary pl-5">
             <h3 className="font-bold">Descárgala en Google Play</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Instala Moto Dash desde Google Play en tu Android. Al conectar tu moto, compras la licencia dentro de la
-              app con tu cuenta de Google, y las actualizaciones te llegan por la tienda.
+              Compra e instala Moto Dash desde Google Play en tu Android. Queda lista para usar y las actualizaciones te
+              llegan por la tienda.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {store ? (
@@ -680,7 +680,7 @@ const faqs = [
   ],
   [
     "¿Necesito internet?",
-    "Google Maps usa los datos móviles del teléfono para navegar, aunque esté conectado al Wi-Fi de la moto. La licencia permite un periodo sin validación por internet; esto no equivale a navegación offline.",
+    "Google Maps usa los datos móviles del teléfono para navegar, aunque esté conectado al Wi-Fi de la moto. Moto Dash no ofrece navegación offline.",
   ],
   [
     "¿Puedo ver o contestar llamadas desde el tablero?",
@@ -692,11 +692,11 @@ const faqs = [
   ],
   [
     "¿Cómo recibo la app y las actualizaciones?",
-    "Descargas Moto Dash desde Google Play y la licencia la compras dentro de la app. Las actualizaciones llegan por la tienda y no tienen un costo adicional.",
+    "Compras y descargas Moto Dash en Google Play, con un solo pago. Las actualizaciones llegan por la tienda y no tienen un costo adicional.",
   ],
   [
     "¿Qué pasa si cambio de teléfono?",
-    `Instala Moto Dash desde Google Play con la misma cuenta de Google. Si la licencia no se activa, escríbenos a soporte por WhatsApp al ${product.whatsapp.display}.`,
+    `Instala Moto Dash desde Google Play con la misma cuenta de Google, sin pagar otra vez. Si tienes algún problema, escríbenos a soporte por WhatsApp al ${product.whatsapp.display}.`,
   ],
   [
     "¿Se siguen viendo la velocidad y la gasolina?",

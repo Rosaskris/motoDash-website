@@ -36,16 +36,17 @@ function EliminarDatos() {
 
       <LegalSection title="Qué se elimina">
         <ul>
-          <li>Tu nombre y tu número de celular.</li>
-          <li>Tu licencia y los datos de la compra que guardamos.</li>
-          <li>Los teléfonos vinculados (identificador cifrado, modelo y versiones).</li>
-          <li>Las motos vinculadas (identificador del tablero y MAC de su Wi-Fi).</li>
-          <li>El historial de uso de la licencia.</li>
+          <li>Tu nombre, tu número de celular y tus autorizaciones.</li>
+          <li>El identificador cifrado y el modelo de tu teléfono.</li>
+          <li>
+            Si usas la versión con licencia de soporte: la licencia, sus teléfonos y motos vinculados (identificador del
+            tablero y MAC de su Wi-Fi) y su historial de uso.
+          </li>
         </ul>
         <p>
           No conservamos ningún dato tuyo después de eliminarlo. Los registros técnicos de nuestro proveedor de servidores
-          (por ejemplo, direcciones IP) se borran solos según sus plazos. Google Play conserva el registro de tu compra
-          según su propia política. Al eliminar la licencia, la app deja de funcionar en tus teléfonos.
+          (por ejemplo, direcciones IP) se borran solos según sus plazos. Tu compra de la app la conserva Google Play según
+          su propia política: puedes seguir usando Moto Dash después de eliminar tus datos.
         </p>
       </LegalSection>
 
@@ -55,7 +56,7 @@ function EliminarDatos() {
           <strong>Ajustes de Android → Apps → Moto Dash → Almacenamiento → Borrar datos</strong>.
         </p>
         <div className="mt-4 rounded-lg border border-border bg-surface p-4">
-          <p>Si solo quieres desvincular un teléfono o una moto sin perder la licencia, escríbenos por el mismo medio.</p>
+          <p>Si solo quieres actualizar tu nombre o tu teléfono, escríbenos por el mismo medio.</p>
         </div>
       </LegalSection>
 

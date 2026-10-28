@@ -25,8 +25,8 @@ function Privacidad() {
       <div className="mt-6 rounded-lg border border-border bg-surface p-4">
         <p>
           Moto Dash muestra Google Maps y los datos de tu moto en el tablero. Casi todo ocurre solo en tu teléfono: a
-          nuestro servidor llegan tu nombre y tu teléfono, los datos de tu compra y lo necesario para validar tu
-          licencia. Nunca llegan tu ubicación, tus rutas ni tus notificaciones. No vendemos datos, no mostramos
+          nuestro servidor llegan tu nombre, tu teléfono y el modelo de tu celular. El pago lo procesa Google Play y no
+          recibimos tus datos de pago. Nunca llegan tu ubicación, tus rutas ni tus notificaciones. No vendemos datos, no mostramos
           publicidad y no usamos herramientas de analítica de terceros.
         </p>
       </div>
@@ -54,28 +54,23 @@ function Privacidad() {
               "Personalizar la app, identificarte como cliente, darte soporte y, solo si lo autorizas, enviarte novedades de Moto Dash",
             ],
             [
-              "Datos de la compra en Google Play",
-              "Cuando compras la licencia",
-              "Activar tu licencia y comprobar que la compra es válida. Recibimos el producto comprado, la fecha, el estado y el identificador de la compra; nunca los datos de tu tarjeta ni de tu medio de pago",
-            ],
-            [
               "Identificador del teléfono",
-              "Al activar y validar la licencia",
-              "Limitar la licencia a tus teléfonos. Es un valor cifrado (SHA-256) derivado del identificador de Android: no permite saber quién eres ni conocer el identificador original",
+              "Cuando te registras en la app",
+              "Asociar tu registro a tu teléfono sin guardar el identificador original. Es un valor cifrado (SHA-256) derivado del identificador de Android: no permite saber quién eres ni conocer el identificador original",
             ],
             [
               "Fabricante y modelo del teléfono, versión de Android y de Moto Dash",
-              "Al activar y validar la licencia",
+              "Cuando te registras en la app",
               "Soporte técnico y compatibilidad",
             ],
             [
               "Identificador del tablero de la moto y dirección MAC de su Wi-Fi",
-              "Al conectar una moto nueva",
+              "Solo en la versión que se instala fuera de Google Play, con licencia de soporte, al conectar una moto nueva",
               "Limitar la licencia a la moto acordada",
             ],
             [
               "Historial de uso de la licencia (activaciones, validaciones, motos liberadas) y sus fechas",
-              "En cada uno de esos eventos",
+              "Solo en la versión con licencia de soporte, en cada uno de esos eventos",
               "Seguridad de la licencia y soporte",
             ],
             [
@@ -140,7 +135,7 @@ function Privacidad() {
             ["Notificaciones", "Mostrar el estado de la conexión con la moto"],
             ["Acceso a notificaciones", "Detectar el inicio y el fin de las rutas de Google Maps"],
             ["Mostrar sobre otras apps", "Iniciar Android Auto en segundo plano para enviar el mapa al tablero"],
-            ["Internet", "Registrarte, activar y validar la licencia"],
+            ["Internet", "Enviar tu registro (y, en la versión con licencia de soporte, validarla)"],
             ["Iniciar al encender el teléfono", "Avisarte si hay que activar Android Auto después de reiniciar"],
           ]}
         />
@@ -150,7 +145,7 @@ function Privacidad() {
         <p>No vendemos ni alquilamos tus datos. Solo los tratan, por cuenta nuestra, estos proveedores:</p>
         <ul>
           <li><strong>Supabase:</strong> servidor y base de datos de clientes y licencias.</li>
-          <li><strong>Google Play:</strong> procesa el pago de la licencia según su propia política de privacidad.</li>
+          <li><strong>Google Play:</strong> procesa el pago de la app según su propia política de privacidad. No recibimos tus datos de pago.</li>
           <li><strong>Google:</strong> Android Auto, Google Maps y Google Play Services, cada uno según su propia política.</li>
           <li><strong>Vercel:</strong> alojamiento de este sitio web.</li>
           <li><strong>WhatsApp o Telegram:</strong> solo si nos escribes o nos envías un reporte por ahí.</li>
@@ -165,14 +160,14 @@ function Privacidad() {
       <LegalSection title="8. Seguridad">
         <ul>
           <li>Toda la comunicación con el servidor viaja cifrada (HTTPS).</li>
-          <li>Los datos de la licencia se guardan cifrados en tu teléfono, con una clave que no sale del dispositivo.</li>
+          <li>En la versión con licencia de soporte, sus datos se guardan cifrados en tu teléfono, con una clave que no sale del dispositivo.</li>
           <li>Solo las personas autorizadas del equipo de Moto Dash acceden a la base de datos, con usuario y contraseña.</li>
         </ul>
       </LegalSection>
 
       <LegalSection title="9. Cuánto tiempo se conservan">
         <p>
-          Los datos del servidor se conservan mientras tengas una licencia de Moto Dash. Puedes pedir que los eliminemos
+          Los datos del servidor se conservan mientras uses Moto Dash. Puedes pedir que los eliminemos
           en cualquier momento (ver <Link to="/eliminar-datos">Eliminar mis datos</Link>). Los datos que están solo en
           tu teléfono se borran al desinstalar la app o al borrar sus datos desde los ajustes de Android.
         </p>
