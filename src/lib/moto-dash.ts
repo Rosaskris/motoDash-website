@@ -2,8 +2,8 @@ export const product = {
   motorcycle: 'SYM ADXTG 175',
   minimumAndroid: 10,
   minimumAndroidAuto: '17.4',
-  // Un solo pago: la licencia cubre 3 dispositivos distintos, siempre que la moto sea la misma.
-  license: { devices: 3, sameMotorcycleOnly: true, oneTimePayment: true, paidUpdates: false },
+  // Un solo pago para la misma moto.
+  license: { sameMotorcycleOnly: true, oneTimePayment: true, paidUpdates: false },
   capabilities: { callsOnDashboard: true, whatsappMessageAlertsOnDashboard: false, replyFromDashboard: false, otherDashboardMaps: false, modifiesMotorcycle: false, lockedPhone: true },
   dashboardInfo: ['Odómetro', 'Voltaje de batería', 'Trip A', 'TCS', 'RPM', 'Gato lateral'],
   // Soporte: la app y la licencia se obtienen en Google Play, no por este chat.

@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Google Maps en tu SYM ADXTG 175. Solo Android, en Google Play y un solo pago para tres dispositivos en la misma moto.",
+          "Google Maps en tu SYM ADXTG 175. Solo Android, en Google Play y un solo pago para la misma moto.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -193,9 +193,6 @@ function Hero() {
                 Un solo pago
               </span>
               <span className="whitespace-nowrap rounded-full border-2 border-primary bg-card px-4 py-2 text-sm font-extrabold text-primary sm:text-base">
-                {product.license.devices} dispositivos
-              </span>
-              <span className="whitespace-nowrap rounded-full border-2 border-primary bg-card px-4 py-2 text-sm font-extrabold sm:text-base">
                 La misma moto
               </span>
             </div>
@@ -578,15 +575,10 @@ function License() {
             <div className="rounded-xl border-2 border-primary bg-card p-6">
               <p className="text-3xl font-extrabold leading-tight sm:text-4xl">
                 Un solo pago.
-                <span className="mt-1 block text-primary">{product.license.devices} dispositivos.</span>
-                <span className="mt-1 block">La misma moto.</span>
+                <span className="mt-1 block text-primary">La misma moto.</span>
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Hasta {product.license.devices} personas pueden tener Moto Dash en teléfonos distintos sin pagar otra
-                licencia. La única condición: que las tres usen la misma {product.motorcycle}.
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                No se paga por cada persona ni cada mes: la licencia es una sola, sin suscripción y con las
+                No se paga cada mes: la licencia es una sola, para tu {product.motorcycle}, sin suscripción y con las
                 actualizaciones incluidas. La licencia se compra dentro de la app, con Google Play.
               </p>
             </div>
@@ -610,9 +602,6 @@ function License() {
                 </Button>
               )}
             </div>
-            <p className="mt-5 text-sm text-muted-foreground">
-              Precio: <span className="font-semibold text-foreground">por definir</span>
-            </p>
           </div>
         </div>
       </div>

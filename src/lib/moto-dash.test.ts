@@ -9,10 +9,7 @@ describe('Condiciones de Moto Dash', () => {
       email: 'motodashoficial@gmail.com',
     });
   });
-  it('permite tres dispositivos distintos en la misma moto', () => {
-    expect(product.license.devices).toBe(3);
-    expect(product.license.sameMotorcycleOnly).toBe(true);
-  });
+  it('la licencia es para la misma moto', () => expect(product.license.sameMotorcycleOnly).toBe(true));
   it('requiere un pago único', () => expect(product.license.oneTimePayment).toBe(true));
   it('incluye actualizaciones sin otro pago', () => expect(product.license.paidUpdates).toBe(false));
   it('requiere Android 10 o superior', () => expect(product.minimumAndroid).toBe(10));
